@@ -30,13 +30,12 @@ export default class Student extends Component {
     console.log('da stud',student)
     return(
       <div>
-        <div>{student.name}</div>
+        Name: <div>{student.name}</div>
         <div>{student.email}</div>
+        Campus:
         <Link to={`/campus/${campus.id}`}>
           <div>{campus.name}</div>
         </Link>
-
-
       </div>
     )
   }

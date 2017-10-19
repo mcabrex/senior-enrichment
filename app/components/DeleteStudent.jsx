@@ -13,6 +13,7 @@ export default class DeleteStudent extends Component {
 
   deleteStudent(){
     const id = this.state.studentToDelete;
+    console.log('deleted',id)
     axios.delete(`api/students/${id}`)
     .then(res => {
         return res.data;

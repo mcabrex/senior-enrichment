@@ -37,7 +37,7 @@ router.post('/',(req,res,next)=>{
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
   console.log('DELETED ID', id)
-  Campus.destroy({
+  Student.destroy({
     where: {
       id: id
     }
