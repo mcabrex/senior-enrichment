@@ -25,3 +25,12 @@ router.get('/:id',(req,res,next)=>{
   })
   .catch(next)
 })
+
+router.post('/',(req,res,next)=>{
+  console.log('THIS IS A REQUEST',req.body)
+  Student.create(req.body)
+  .then(createdStudent => {
+    res.json(createdStudent);
+  })
+  .catch(next);
+})

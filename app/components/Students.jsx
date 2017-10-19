@@ -28,7 +28,7 @@ export default class Header extends Component {
     return(
       <div>
         <Link to="/students/studentTest/addStudent">
-          <button>This is an add student button</button>
+          <button>+</button>
         </Link>
         {students.map(student=>{
           return(
@@ -39,7 +39,7 @@ export default class Header extends Component {
               <Link to={`/campus/${student.Campus.id}`}>
                 <div>{student.Campus.name}</div>
               </Link>
-              <button>This is a delete button</button>
+              <button>X</button>
             </div>
           )
         })}
