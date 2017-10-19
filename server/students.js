@@ -11,3 +11,17 @@ router.get('/',(req,res,next)=>{
     })
     .catch(next)
 })
+
+router.get('/:id',(req,res,next)=>{
+  const id = req.params.id;
+  Student.findOne({
+    include: [{model: Campus}],
+    where: {
+      id: id
+    }
+  })
+  .then(campus=>{
+    res.json(campus)
+  })
+  .catch(next)
+})

@@ -33,10 +33,10 @@ export default class Header extends Component {
         {students.map(student=>{
           return(
             <div key={student.id}>
-              <Link to='/students/studentTest'>
+              <Link to={`/students/${student.id}`}>
               <h2>{student.name}</h2>
               </Link>
-              <Link to='/campusTest'>
+              <Link to={`/campus/${student.Campus.id}`}>
                 <div>{student.Campus.name}</div>
               </Link>
               <button>This is a delete button</button>
