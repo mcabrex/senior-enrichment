@@ -34,7 +34,9 @@ export default class Campuses extends Component {
             </div>
           )
         })}
-
+        <Link to="/campus/addCampus">
+          <button>+</button>
+        </Link>
       </div>
     )
   }

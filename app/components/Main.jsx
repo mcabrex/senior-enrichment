@@ -22,8 +22,8 @@ export default class Main extends Component {
             <Route exact path="/students" component={Students}/>
             <Route exact path="/students/addStudent" component={AddStudent}></Route>
             <Route exact path="/students/:studentId" component={Student}/>
-            <Route exact path="/campus/:campusId" component={Campus}/>
             <Route exact path="/campus/addCampus" component={AddCampus}></Route>
+            <Route exact path="/campus/:campusId" component={Campus}/>
           </Switch>
         </div>
       </Router>

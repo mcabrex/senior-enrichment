@@ -35,7 +35,6 @@ export default class AddCampus extends Component {
 
     return(
       <div>
-      <div></div>
       <div>Add Campus</div>
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div>

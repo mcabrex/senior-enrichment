@@ -30,9 +30,6 @@ export default class Campus extends Component {
     console.log('students',students)
     return(
       <div>
-        <Link to='campus/addCampus'>
-          <button>+</button>
-        </Link>
         <div>{campus.name}</div>
         {students.map(student=>{
           return(
