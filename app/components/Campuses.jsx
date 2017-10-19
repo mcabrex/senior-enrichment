@@ -1,26 +1,38 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 export default class Campuses extends Component {
+  constructor(){
+    super();
+    this.state = {
+      campuses: []
+    }
+  }
+
+  componentDidMount(){
+    axios.get('/api/campus')
+      .then(res=>res.data)
+      .then(campusList=>this.setState({campuses:campusList}))
+      .catch(err=>{
+        console.log('ERROR',err)
+      })
+  }
+
   render(){
+    console.log('THE STATE',this.state)
+    const campuses = this.state.campuses
     return(
       <div className="main-campus">
 
-        <Link to="/:campusTest">
-          <div>Luna</div>
-        </Link>
-
-        <Link to="/:campusTest">
-          <div>Terra</div>
-        </Link>
-
-        <Link to="/:campusTest">
-          <div>Mars</div>
-        </Link>
-
-        <Link to="/:campusTest">
-          <div>Titan</div>
-        </Link>
+        {campuses.map(campus=>{
+          return(
+            <div key={campus.id}>
+              <Link to={`/campus/${campus.id}`}>{campus.name}</Link>
+            </div>
+          )
+        })}
 
       </div>
     )

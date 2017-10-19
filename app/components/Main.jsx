@@ -8,10 +8,6 @@ import Campus from './Campus'
 import AddStudent from './AddStudent'
 
 export default class Main extends Component {
-  constructor(){
-    super()
-  }
-
   render(){
     return(
       <Router>
@@ -23,9 +19,9 @@ export default class Main extends Component {
             <Route exact path="/" component={Campuses}/>
             <Route exact path="/home" component={Campuses}/>
             <Route exact path="/students" component={Students}/>
-            <Route exact path="/students/studentTest" component={Student}/>
-            <Route exact path="/:campusTest" component={Campus}/>
-            <Route exact path="/students/studentTest/addStudent" component={AddStudent}/>
+            <Route exact path="/students/:studentId" component={Student}/>
+            <Route exact path="/campus/:campusId" component={Campus}/>
+            <Route exact path="/students/:studentId/addStudent" component={AddStudent}/>
           </Switch>
         </div>
       </Router>
