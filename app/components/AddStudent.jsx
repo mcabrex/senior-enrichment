@@ -35,7 +35,7 @@ export default class AddStudent extends Component {
     const form = {
       name: state.name,
       email: state.email,
-      CampusId: Number(state.campus)
+      CampusId: state.campus
     }
     axios.post('/api/students',form)
       .then(res=>res.data)
@@ -44,12 +44,8 @@ export default class AddStudent extends Component {
     })
   }
 
-
-
   render(){
     const campuses = this.state.campuses
-    console.log(this.state)
-
     return(
       <div>
       <div></div>

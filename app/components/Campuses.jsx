@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-
+import AddCampus from './AddCampus'
+import DeleteCampus from './DeleteCampus'
 
 export default class Campuses extends Component {
   constructor(){
@@ -25,11 +26,11 @@ export default class Campuses extends Component {
     const campuses = this.state.campuses
     return(
       <div className="main-campus">
-
         {campuses.map(campus=>{
           return(
             <div key={campus.id}>
               <Link to={`/campus/${campus.id}`}>{campus.name}</Link>
+              <DeleteCampus delete={campus.id}/>
             </div>
           )
         })}

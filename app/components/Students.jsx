@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import DeleteStudent from './DeleteStudent'
 
 
 export default class Header extends Component {
   constructor(){
     super();
     this.state={
-      students: []
+      students: [],
+      studentDeleteId: ''
     }
   }
 
@@ -27,22 +29,33 @@ export default class Header extends Component {
     const students = this.state.students
     return(
       <div>
-        <Link to="/students/studentTest/addStudent">
+        <Link to='students/addStudent'>
           <button>+</button>
         </Link>
-        {students.map(student=>{
-          return(
-            <div key={student.id}>
-              <Link to={`/students/${student.id}`}>
-              <h2>{student.name}</h2>
-              </Link>
-              <Link to={`/campus/${student.Campus.id}`}>
-                <div>{student.Campus.name}</div>
-              </Link>
-              <button>X</button>
-            </div>
-          )
-        })}
+        <table>
+          <tbody >
+            <tr>
+              <th>Name</th>
+              <th>Campus</th>
+              <th>X</th>
+            </tr>
+              {students.map(student=>{
+                return(
+                  <tr key={student.id}>
+                    <td>
+                    <Link to={`/students/${student.id}`}>{student.name}</Link>
+                    </td>
+                    <td>
+                    <Link to={`/campus/${student.Campus.id}`}>{student.Campus.name}</Link>
+                    </td>
+                    <td>
+                    <DeleteStudent delete={student.id}/>
+                    </td>
+                  </tr>
+                )
+              })}
+          </tbody>
+        </table>
       </div>
     )
   }

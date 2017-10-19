@@ -25,3 +25,25 @@ router.get('/:id', (req, res, next) => {
 	})
 	.catch(next)
 })
+
+router.post('/',(req,res,next)=>{
+  Campus.create(req.body)
+  .then(createdStudent => {
+    res.json(createdStudent);
+  })
+  .catch(next);
+})
+
+router.delete('/:id', (req, res, next) => {
+  const id = req.params.id;
+  console.log('DELETED ID', id)
+  Student.destroy({
+    where: {
+      id: id
+    }
+  })
+    .then(() => {
+      res.send('deleted');
+    })
+    .catch(next);
+});
