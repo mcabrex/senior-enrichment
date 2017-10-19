@@ -5,10 +5,23 @@ export default class Campuses extends Component {
   render(){
     return(
       <div className="main-campus">
-        <div>Luna</div>
-        <div>Terra</div>
-        <div>Mars</div>
-        <div>Titan</div>
+
+        <Link to="/:campusTest">
+          <div>Luna</div>
+        </Link>
+
+        <Link to="/:campusTest">
+          <div>Terra</div>
+        </Link>
+
+        <Link to="/:campusTest">
+          <div>Mars</div>
+        </Link>
+
+        <Link to="/:campusTest">
+          <div>Titan</div>
+        </Link>
+
       </div>
     )
   }

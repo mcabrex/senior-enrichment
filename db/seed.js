@@ -8,13 +8,13 @@ const Campus = require('./models/campus');
 
 const campuses = [
 
-  { name: 'React' },
+  { name: 'Luna' },
 
-  { name: 'Redux' },
+  { name: 'Terra' },
 
-  { name: 'Sequelize' },
+  { name: 'Mars' },
 
-  { name: 'Express' },
+  { name: 'Titan' },
 
 ];
 

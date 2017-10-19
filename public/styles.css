@@ -1,6 +1,10 @@
-  body {
-      background-color: rgb(206,225,243);
-  }
-  h1 {
-      color: blue;
-  }
+.main-campus {
+  background-color: orange;
+}
+
+body {
+    background-color: rgb(206,225,243);
+}
+h1 {
+    color: blue;
+}
