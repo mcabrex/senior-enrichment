@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
 import Header from './Header'
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
-import Students from './Students'
-import Campuses from './Campuses'
-import Student from './Student'
-import Campus from './Campus'
-import AddStudent from './AddStudent'
-import AddCampus from './AddCampus'
-import UpdateStudent from './UpdateStudent'
-import UpdateCampus from './UpdateCampus'
+import Students from './StudentFiles/Students'
+import UpdateStudent from './StudentFiles/UpdateStudent'
+import AddStudent from './StudentFiles/AddStudent'
+import Student from './StudentFiles/Student'
+import Campuses from './CampusFiles/Campuses'
+import Campus from './CampusFiles/Campus'
+import AddCampus from './CampusFiles/AddCampus'
+import UpdateCampus from './CampusFiles/UpdateCampus'
 
 export default class Main extends Component {
   render(){
     return(
       <Router>
-        <div>
-          <h1>
-            <Header />
-          </h1>
+        <div className="daddy">
+          <div className="header">
+            <h1>
+              <Header />
+            </h1>
+          </div>
+          <div className="main">
           <Switch>
             <Route exact path="/" component={Campuses}/>
             <Route exact path="/home" component={Campuses}/>
@@ -29,6 +32,7 @@ export default class Main extends Component {
             <Route exact path="/campus/:campusId/updateCampus" component={UpdateCampus} />
             <Route exact path="/campus/:campusId" component={Campus}/>
           </Switch>
+          </div>
         </div>
       </Router>
     )

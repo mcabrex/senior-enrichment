@@ -1,10 +1,45 @@
-.main-campus {
-  background-color: goldenrod;
-}
-
 body {
     background-color: rgb(206,225,243);
 }
+
 h1 {
     color: blue;
+}
+
+.daddy {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  border-bottom: 2px solid black;
+  padding: 3px 0px 20px 0px;
+}
+
+.main {
+  padding-top: 20px;
+}
+
+.main-campus {
+  background-color: white;
+}
+
+#ooga {
+  background-color: purple;
+}
+
+#home {
+  background-color: rgb(0,255,0);
+  float: right;
+  border-style: solid;
+  border-color: black;
+  margin-right: 5%
+}
+
+#studs {
+  background-color: rgb(243,243,243);
+  border-style: solid;
+  border-color: black;
+  float: right;
+  margin-right: 10%;
 }
