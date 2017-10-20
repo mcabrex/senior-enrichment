@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import DeleteStudent from './DeleteStudent'
+import DeleteStudent from './DeleteStudent';
+import UpdateStudent from './UpdateStudent';
 
 
 export default class Header extends Component {
@@ -37,19 +38,25 @@ export default class Header extends Component {
             <tr>
               <th>Name</th>
               <th>Campus</th>
+              <th>Update</th>
               <th>X</th>
             </tr>
               {students.map(student=>{
                 return(
                   <tr key={student.id}>
                     <td>
-                    <Link to={`/students/${student.id}`}>{student.name}</Link>
+                      <Link to={`/students/${student.id}`}>{student.name}</Link>
                     </td>
                     <td>
-                    <Link to={`/campus/${student.Campus.id}`}>{student.Campus.name}</Link>
+                      <Link to={`/campus/${student.Campus.id}`}>{student.Campus.name}</Link>
                     </td>
                     <td>
-                    <DeleteStudent delete={student.id}/>
+                      <Link to={`/students/${student.id}/updateStudent`}>
+                        <button>-</button>
+                      </Link>
+                    </td>
+                    <td>
+                      <DeleteStudent delete={student.id}/>
                     </td>
                   </tr>
                 )

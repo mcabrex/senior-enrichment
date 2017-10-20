@@ -46,9 +46,9 @@ export default class AddStudent extends Component {
 
   render(){
     const campuses = this.state.campuses
+    console.log(this.state)
     return(
       <div>
-      <div></div>
       <div>Add Person</div>
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div>

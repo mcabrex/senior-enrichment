@@ -12,6 +12,7 @@ router.get('/',(req,res,next)=>{
     .catch(next)
 })
 
+
 router.get('/:id',(req,res,next)=>{
   const id = req.params.id;
   Student.findOne({
@@ -24,6 +25,19 @@ router.get('/:id',(req,res,next)=>{
     res.json(campus)
   })
   .catch(next)
+})
+
+router.put('/:id',(req,res,next)=>{
+  const id = req.params.id;
+  console.log(id,req.body)
+  Student.findById(id)
+    .then(student=>{
+      student.update(req.body)
+    })
+    .then(updatedStudent=>{
+      res.json(updatedStudent)
+    })
+    .catch(next)
 })
 
 router.post('/',(req,res,next)=>{
