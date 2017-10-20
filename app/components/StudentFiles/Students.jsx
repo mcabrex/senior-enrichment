@@ -29,21 +29,25 @@ export default class Header extends Component {
     console.log('THIS IS THE STATE',this.state)
     const students = this.state.students
     return(
-      <div>
+      <div className="studentList">
         <Link to='students/addStudent'>
           <button>+</button>
         </Link>
         <table>
           <tbody >
-            <tr>
-              <th>Name</th>
-              <th>Campus</th>
-              <th>Update</th>
-              <th>X</th>
-            </tr>
-              {students.map(student=>{
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Campus</th>
+                <th>Update</th>
+                <th>X</th>
+              </tr>
+              {students.map((student,index)=>{
                 return(
                   <tr key={student.id}>
+                    <td>
+                      {index}
+                    </td>
                     <td>
                       <Link to={`/students/${student.id}`}>{student.name}</Link>
                     </td>

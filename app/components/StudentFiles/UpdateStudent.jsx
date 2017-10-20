@@ -56,7 +56,7 @@ export default class UpdateStudent extends Component {
     const campuses = this.state.campuses
     console.log('bizooper', this.state)
     return(
-      <div>
+      <div className="title">
         Update Student
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div>
@@ -73,7 +73,7 @@ export default class UpdateStudent extends Component {
               )
             })}
           </select>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
       </div>
     )

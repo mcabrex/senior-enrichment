@@ -35,13 +35,13 @@ export default class UpdateCampus extends Component {
   render(){
     console.log(this.state)
     return(
-      <div>
+      <div className="title">
         Update Campus
         <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
           <div>
             <input type="text" placeholder="name" name="name"></input>
           </div>
-          <button>Submit</button>
+          <button className="button">Submit</button>
         </form>
       </div>
     )

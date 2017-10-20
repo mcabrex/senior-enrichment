@@ -28,9 +28,8 @@ router.get('/:id', (req, res, next) => {
 
 router.post('/',(req,res,next)=>{
   Campus.create(req.body)
-  .then(createdStudent => {
-    res.json(createdStudent);
-  })
+  .then(createdStudent => 
+    res.json(createdStudent))
   .catch(next);
 })
 

@@ -28,12 +28,14 @@ export default class Campuses extends Component {
       <div className="main-campus">
         {campuses.map(campus=>{
           return(
-            <div key={campus.id}>
+            <div className={`campus${campus.id%4+1}`} key={campus.id}>
+              <div className={`circle${campus.id%4+1}`}>
               <Link to={`/campus/${campus.id}`}>{campus.name}</Link>
               <Link to={`/campus/${campus.id}/updateCampus`}>
                 <button>-</button>
               </Link>
               <DeleteCampus delete={campus.id}/>
+              </div>
             </div>
           )
         })}

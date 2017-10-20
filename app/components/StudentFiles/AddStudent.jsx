@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class AddStudent extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       campuses: []
     }
@@ -41,6 +41,7 @@ export default class AddStudent extends Component {
       .then(res=>res.data)
       .then(res=>{
         console.log('response',res)
+        this.props.route.history.push('/home')
     })
   }
 
@@ -49,7 +50,7 @@ export default class AddStudent extends Component {
     console.log(this.state)
     return(
       <div>
-      <div>Add Person</div>
+      <div className="title">Add Person</div>
       <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
         <div>
           <input type="text" placeholder="name" name="name"></input>

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 export default class AddCampus extends Component {
-  constructor(){
-    super()
+  constructor(props){
+    super(props)
     this.state = {
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -26,13 +26,12 @@ export default class AddCampus extends Component {
     axios.post('/api/campus',form)
       .then(res=>res.data)
       .then(res=>{
-        console.log('response',res)
+        console.log('response',this.props.route)
+        this.props.route.history.push('/home')
     })
   }
 
   render(){
-    console.log(this.state)
-
     return(
       <div>
       <div>Add Campus</div>
