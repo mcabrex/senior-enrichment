@@ -43,7 +43,6 @@ export default class UpdateStudent extends Component {
       CampusId: this.state.campus
     }
     const id = this.props.match.params.studentId;
-    console.log('formerino',form)
     axios.put(`/api/students/${id}`,form)
       .then(res=>res.data)
       .then(res=>{

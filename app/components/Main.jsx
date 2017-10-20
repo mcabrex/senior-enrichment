@@ -8,6 +8,7 @@ import Campus from './Campus'
 import AddStudent from './AddStudent'
 import AddCampus from './AddCampus'
 import UpdateStudent from './UpdateStudent'
+import UpdateCampus from './UpdateCampus'
 
 export default class Main extends Component {
   render(){
@@ -24,8 +25,8 @@ export default class Main extends Component {
             <Route exact path="/students/addStudent" component={AddStudent}></Route>
             <Route exact path="/students/:studentId/updateStudent" component={UpdateStudent} />
             <Route exact path="/students/:studentId" component={Student}/>
-
             <Route exact path="/campus/addCampus" component={AddCampus}></Route>
+            <Route exact path="/campus/:campusId/updateCampus" component={UpdateCampus} />
             <Route exact path="/campus/:campusId" component={Campus}/>
           </Switch>
         </div>

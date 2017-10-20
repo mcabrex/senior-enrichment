@@ -30,6 +30,9 @@ export default class Campuses extends Component {
           return(
             <div key={campus.id}>
               <Link to={`/campus/${campus.id}`}>{campus.name}</Link>
+              <Link to={`/campus/${campus.id}/updateCampus`}>
+                <button>-</button>
+              </Link>
               <DeleteCampus delete={campus.id}/>
             </div>
           )

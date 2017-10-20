@@ -34,6 +34,19 @@ router.post('/',(req,res,next)=>{
   .catch(next);
 })
 
+router.put('/:id',(req,res,next)=>{
+  const id = req.params.id;
+  console.log(id,req.body)
+  Campus.findById(id)
+    .then(campus=>{
+      campus.update(req.body)
+    })
+    .then(updatedCampus=>{
+      res.json(updatedCampus)
+    })
+    .catch(next)
+})
+
 router.delete('/:id', (req, res, next) => {
   const id = req.params.id;
   console.log('DELETED ID', id)
